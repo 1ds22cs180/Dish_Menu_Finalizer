@@ -1,4 +1,5 @@
-import React from 'react';
+//import React from 'react';
+import PropTypes from 'prop-types';
 
 const MenuList = ({ dishes, onSelectDish }) => {
   return (
@@ -14,6 +15,15 @@ const MenuList = ({ dishes, onSelectDish }) => {
       </ul>
     </div>
   );
+};
+
+MenuList.propTypes = {
+  dishes: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired
+    })
+  ).isRequired,
+  onSelectDish: PropTypes.func.isRequired
 };
 
 export default MenuList;

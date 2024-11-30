@@ -1,4 +1,5 @@
-import React from 'react';
+//import React from 'react';
+import PropTypes from 'prop-types';
 
 const FinalizeMenu = ({ finalizedDishes }) => {
   return (
@@ -11,6 +12,14 @@ const FinalizeMenu = ({ finalizedDishes }) => {
       </ul>
     </div>
   );
+};
+
+FinalizeMenu.propTypes = {
+  finalizedDishes: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired
+    })
+  ).isRequired
 };
 
 export default FinalizeMenu;
